@@ -29,7 +29,7 @@ export class ProductService {
     this.getProduct(id).subscribe((data) => {
       this.products.push(data);
     });
-    this._tokenProviderSubject.next(this.counter);
+   // this._tokenProviderSubject.next(this.counter);
   }
   //  getCounter(){
   //    return this.counter;
