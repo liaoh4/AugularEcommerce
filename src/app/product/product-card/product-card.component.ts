@@ -4,17 +4,17 @@ import { Router } from '@angular/router';
 @Component({
   selector: 'app-product-card',
   templateUrl: './product-card.component.html',
-  styleUrls: ['./product-card.component.css']
+  styleUrls: ['./product-card.component.scss']
 })
 export class ProductCardComponent implements OnInit {
   @Input() productData: any;
-  buyNow: boolean;
+  buyNow: boolean = false;
   constructor(private _router: Router) { }
 
   ngOnInit(): void {
   }
 
-  buy(id){
+  buy(id: any){
     // this.buyNow = true;
     this._router.navigate(['/shop-product', id])
   }

@@ -1,0 +1,60 @@
+:root {
+  loaderduration: 1.3s;
+}
+
+.faded-loading-screen {
+  position: fixed;
+  z-index: 999999;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(255, 255, 255, 0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.faded-loading-screen .spinner {
+  width: 65px;
+  height: 65px;
+  position: relative;
+}
+
+.faded-loading-screen .spinner:before,
+.faded-loading-screen .spinner:after {
+  content: "";
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background-color: skyblue;
+  opacity: 0.5;
+  position: absolute;
+  top: 0;
+  left: 0;
+  animation: skBounce 1.3s infinite ease-in-out;
+}
+
+.faded-loading-screen .spinner:after {
+  animation-delay: calc(-1 * 1.3s / 2);
+}
+
+@keyframes skBounce {
+  from,
+  to {
+    transform: scale(0);
+  }
+  50% {
+    transform: scale(1);
+  }
+}
+
+@-webkit-keyframes skBounce {
+  from,
+  to {
+    transform: scale(0);
+  }
+  50% {
+    transform: scale(1);
+  }
+}
